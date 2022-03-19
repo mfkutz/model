@@ -400,7 +400,11 @@ textarea{
 	justify-content: center;
 }
 
-	           
+.contactoT{
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+}
 
 /*MEDIA QUERIE*/
 
