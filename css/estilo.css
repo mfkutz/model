@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+:root {
+	--white:  #fff;         /*usado*/
+	--colorFondo:  #EFEFEF;
+	--colorBlack: black;
+	--colorWhite: white;
+	--colorBotton:  #488FB1;
+	--colorNegTransp:  rgb(0,0,0,.5);
+	--colorBlanTransp: rgba(255, 255, 255, .5);
+	--coloranimFoo:  #D1D1D1;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+
+
+body {                                  
+	background-image: url(../images/principalchess.jpg);
+	background-repeat: no-repeat;                                
+	background-position: top; 
+	background-size: cover; 
+}
+
+
+.main {
+	background-color: rgba(0, 0, 0, .4);
+	display: flex;                                               
+	flex-direction: column;                                      
+	justify-content: center;                                     
+	align-items:center;
+	height: 700px;
+	text-align: center;
+}
+
+.main h1 {                                                       
+	color: white;                                             
+	font-size: 4rem;                                             
+	text-shadow: 2px 3px 2px black;  
+
+}
+
+/*------------GRIDS MAIN CAMPEONATO------------*/
+.mainCamp{
+	
+	display: grid;
+	grid-template-areas: 
+	"mainCizq mainCder";
+	grid-template-rows: 700px;
+	grid-template-columns: 1fr 1fr;
+	
+}
+
+.mainCizq{
+	grid-area: mainCizq;
+	background-color: rgba(0, 0, 0, .9);
+	
+	color: white;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+
+
+}
+.mainCder{
+	grid-area: mainCder;
+	background-color: rgba(0, 0, 0, 1.0);
+	background-image: url(../images/contrarey.jpg);
+	display: flex;
+	background-repeat: no-repeat;                                /*hace que no se repita la imagen*/
+	background-position: center;                                 /*posiciona imagen en el centro*/
+	background-size: cover; 
+
+}
+/*----------FIN GRIDS CAMPEONATO---------------*/
+/*------------GRIDS top5 CAMPEONATO------------*/
+.maintop{
+	
+	display: grid;
+	grid-template-areas: 
+	"mainTopizq mainTopmed mainTopder";
+	grid-template-rows: 700px;
+	grid-template-columns: 1fr 1fr 1f;
+	
+}
+
+.mainTopizq{
+	grid-area: mainTopizq;
+	background-color: rgba(0, 0, 0, .4);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+
+	
+.mainTopmed{
+	grid-area: mainTopmed;
+	background-color: rgba(0, 0, 0, .8);
+	/*background-image: url(../images/contrarey.jpg);*/
+	display: flex;
+	background-repeat: no-repeat;                                /*hace que no se repita la imagen*/
+	background-position: center;                                 /*posiciona imagen en el centro*/
+	background-size: cover;
+	color: white;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center; 
+
+}
+
+
+.mainTopder{
+	grid-area: mainTopder;
+	background-color: rgba(0, 0, 0, .4);
+	
+	color: white;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.animTop{
+transition: all 0.6s;
+}
+
+
+.animTop:hover{
+	transform:scale(1.2);
+}
+/*-------------INICIO GRIDS CONTACTO---------------*/
+.maintopCont{
+	
+	display: grid;
+	grid-template-areas: 
+	"mainTopizq mainTopmed mainTopder";
+	grid-template-rows: 700px;
+	grid-template-columns: 1fr 1fr 1fr;
+	
+}
+
+
+
+	
+.mainTopmedCont{
+	grid-area: mainTopmed;
+	background-color: rgba(0, 0, 0, .8);
+	display: flex;
+	background-repeat: no-repeat;                                /*hace que no se repita la imagen*/
+	background-position: center;                                 /*posiciona imagen en el centro*/
+	background-size: cover;
+	color: white;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center; 
+
+}
+
+
+
+/*-------------FIN GRIDS CONTACTO---------------*/
+
+
+/*-------INICIO BOTON---------*/
+
+button {  
+         width: 125px;                              
+         color: white;                             
+         border: 0px;                             
+         font-size: 20px;                          
+         margin-top: 1rem;                        
+         background-color: rgba(0, 0, 0, .5);               
+         padding: 1rem;                            
+         border-radius: 5px;                       
+         transition: width 1s ;
+
+}
+button:hover{                                      
+	background-color: #488FB1;
+	transition: .5s;
+}
+
+/*-------FIN BOTON---------*/
+
+.nav__checkbox{
+	display: none;     /*ocultamos el checkbox*/
+}
+
+.nav__toggle {
+	cursor: pointer;    /*le pone la manito a los iconos cruz y hamburguesa*/
+	margin: .8rem 1rem;   /*ubicacion del icono menu hamburguesa*/
+	position: absolute;   /*para que no se mueva de donde lo pongamos*/
+	right: 0;         /*pone el icono del menu hambur en la derecha*/
+}
+
+.nav__toggle svg {       /* modificamos colores de imagenes (iconos hambur) */
+	fill: var(--white);  /* con fill modificamos los colores de los svg */ 
+	width: 1.6rem;       /*modificamos el tamaño del icono hambur*/
+}
+
+.nav__toggle .close {  /*oculto icono de la cruz para que no se vea en desktop*/
+	display: none;
+}
+
+.nav__toggle .close, 
+.nav__toggle .menu {  /*separo un poco los iconos hamburguesa y cruz (aunque esta ultima no se vea por que esta oculto)*/
+	margin-top: .3rem;
+}
+
+.nav__menu {                  /*menu en forma responsive*/
+	display: flex;           /*asigno display flex*/
+	align-items: center;     /*centro items entre si */
+	flex-direction: column;   /* ordeno los links en columnas */
+	gap: 2rem;     /*separo un poco los links de la nav*/
+	margin: 1rem;      /*le doy un poco de margen a todo el header*/
+
+}
+
+.nav__menu li {
+	list-style-type: none;   /*le quito los circulitos a la lista del menu*/
+    display: none;  /*al finalizar aqui va NONE / (BLOCK, lo dejamos para trabajar y poder verlo*/
+}
+
+.nav__menu li:first-child {
+	margin-right: auto; /*de alguna manera pega el contenido hacia el lado contrario*/
+	display: block;
+}
+
+.menu__logo {       /*ajusto altura de nav "height=altura*/
+	height: 60px;
+}
+
+.menu__logo img {   /*adapto imagen de logo a la altura de la nav*/
+	height: 100%;
+}
+
+.nav__menu a {
+  text-decoration: none;                          
+	color: white;
+	font-size: 15px;                                   
+    text-transform: uppercase;
+    font-weight: 600;
+}
+a:hover {
+	color: #488FB1;
+	text-shadow: 1px 1px 2px black;
+	transition: all .1s;                                   
+}
+
+#nav__checkbox:checked ~ ul.nav__menu li {      /*la magia*/
+  display: block;
+
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .close {
+  display: block;
+
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .menu {
+  display: none;
+
+}
+
+.redesS {
+	display: flex;
+	width: 310px;
+	height: 80px;
+	list-style-type: none;
+	border-radius: .6rem;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgba(255, 255, 255, .5);
+	margin: 10px;
+}
+
+.fooOne {
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+
+}
+.animfoo:hover {                                         
+	
+	
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, .3);
+	fill: white;
+	
+
+}
+
+
+.faceIco, .linkIco, .InstaIco, .twittIco  {
+	width: 2.5rem;
+}
+
+small {
+	color: white;
+	padding: 10px;
+	text-shadow: 1px;
+	background-color: red;
+	border-radius: 9px;
+}
+
+
+/*---------GALERIA------------*/
+
+.textG{
+	color: white;
+	padding-top: 15px;
+	text-transform: uppercase;
+}
+
+.fondoG {
+	background-color: rgba(0, 0, 0, .8);
+
+}
+
+#galeria img {
+	width: 100%;
+}
+
+#galeria .col-lg-4 {
+	padding: 2px;
+}
+
+.galeria{
+		padding-top: 40px;
+}
+
+.animacionG{
+transition: all 0.6s;
+}
+.animacionG:hover{
+	transform:scale(.95);
+}
+
+/*---------------FORMULARIO-----------*/
+
+.formulariocolumna{
+	max-width: 510px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+form{
+	width:100%;
+	padding:20px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"]
+{
+	width:100%;
+	margin:10px 0;
+	border:4px solid white;
+	border-radius:3px;
+	background-color: white;
+	padding:3px 10px;
+}
+
+
+form label{
+	width:100%;
+	font-weight:inherit;
+	display:inline-block;	
+}
+
+textarea{
+	width:100%;
+	height:220px;
+	margin:2px 0;
+	border:1px solid white;
+	background-color:white;			
+	resize:none;
+	border-radius:2px;
+	display:block;
+	padding:3px 10px;
+}
+
+.cajabotonC {
+	display: flex;
+	justify-content: center;
+}
+
+	           
+
+/*MEDIA QUERIE*/
+
+@media only screen and (min-width: 768px) {
+  .nav__toggle {
+    display: none;
+  }
+
+.nav__menu li {
+    display: block;
+  }
+.nav__menu {
+    flex-direction: row;
+  }
+
+
+
+}
+@media only screen and (max-width: 768px){
+
+	.main h1 {                                                       
+	font-size: 2rem;                                             
+	text-shadow: 2px 3px 2px black;  
+}
+.mainCamp{
+	
+	display: grid;
+	grid-template-areas: 
+	"mainCizq" 
+	"mainCder";
+	grid-template-rows: 400px 400px;
+	grid-template-columns: 100%;
+	
+}
+.maintopCont{
+	
+	display: grid;
+	grid-template-areas: 
+	"mainTopmed";
+	grid-template-rows: 700px;
+	grid-template-columns: 1fr;
+	
+}
+
+}
