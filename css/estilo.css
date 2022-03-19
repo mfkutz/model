@@ -448,5 +448,10 @@ textarea{
 	grid-template-columns: 1fr;
 	
 }
+.contactoT{
+	display: flex;
+	justify-content: center;
+	
+}
 
 }
